@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RESTART 40</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  /* Layout: one dark screen, the film as the hero, a short credit strip under it — same world as the video */
+  :root {
+    --bg: #0b0b0b;
+    --ink: #f2efe8;
+    --muted: #8f8d86;
+    --line: #262624;
+    --lime: #c6ff00;
+    --font-display: "Archivo Black", "Arial Black", sans-serif;
+    --font-body: "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    color-scheme: dark;
+  }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font-body); }
+  .wrap {
+    max-width: 1120px; margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: clamp(24px, 5vw, 56px);
+    display: grid; gap: clamp(20px, 3vw, 32px);
+  }
+  header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
+  h1 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 8vw, 88px); line-height: .95; letter-spacing: -0.02em; color: var(--lime); }
+  .tag { font-size: clamp(15px, 2vw, 18px); font-weight: 700; color: var(--ink); text-wrap: balance; }
+  .frame { position: relative; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--line); }
+  video { display: block; width: 100%; height: 100%; }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 0; padding: 16px 0 0; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+  .meta div { display: flex; gap: 8px; }
+  .meta dt { font-family: var(--font-display); font-size: 11px; letter-spacing: .14em; color: var(--ink); padding-top: 3px; }
+  .meta dd { margin: 0; font-variant-numeric: tabular-nums; }
+  a { color: var(--lime); }
+  a:focus-visible, video:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+</style>
+
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <h1>RESTART 40</h1>
+    <p class="tag">재미없게 살 거면 왜 사냐? 지루함은 오늘까지만.</p>
+  </header>
+
+  <div class="frame">
+    <video id="film" src="videos/restart40.mp4" controls playsinline preload="metadata"></video>
+  </div>
+
+  <dl class="meta">
+    <div><dt>LENGTH</dt><dd>0:30</dd></div>
+    <div><dt>FORMAT</dt><dd>1920×1080 · 30fps · 16:9</dd></div>
+    <div><dt>MUSIC</dt><dd>“Sounds Good” — Michael Ramir C. (Mixkit)</dd></div>
+    <div><dt>MADE WITH</dt><dd>HyperFrames · 키네틱 타이포그래피</dd></div>
+  </dl>
+</main>
+
+</body>
+</html>
